@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+      img {
+  border: 5px solid #555;
+}
+        table, th, td{
+            border: 1px solid black;
+        }
+        .modal {
+      transition: opacity 0.25s ease;
+    }
+    .modal-active {
+      overflow-x: hidden;
+      overflow-y: visible !important;
+    }
+    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <header class="bg-white shadow">
+    <div class="container mx-auto p-5 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">My Portfolio</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+          <li><a href="#about" class="hover:text-blue-500">About</a></li>
+          <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+          <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="container mx-auto p-5 text-center">
+    <h2 class="text-3xl font-bold mb-5">MD PADMANABHAN</h2>
+    <p class="text-lg">Discover my project and skills</p>
+  </section>
+  <center>
+    <img src="IMG_20240507_232843_011.jpg" alt="trulli" width="300" height="300">
+  </center>
+
+  <section id="about" class="container mx-auto p-5">
+    <h2 class="text-3xl font-bold mb-5">About Me</h2>
+    <p class="text-lg">I am currently in my final year of pursuing a Bachelor of Science (BSc) degree, with a strong academic record and a proven track record as a smart and efficient worker. My journey through university has honed my analytical skills and deepened my knowledge in my chosen field of study, preparing me for a successful career in the industry.</p>
+    <center>
+  </section>
+
+  <center><h3 class="text-2xl font-bold mb-3">ACADEMICS</h3></center>
+  <table align="center" border="2px">
+    <thead>
+      <tr>
+        <th class="py-2 px-4 border-b">YEAR</th>
+        <th class="py-2 px-4 border-b">CGPA</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="py-2 px-4 border-b">1ST SEM</td>
+        <td class="py-2 px-4 border-b">7.6</td>
+      </tr>
+      <tr class="bg-gray-50">
+        <td class="py-2 px-4 border-b">2ND SEM</td>
+        <td class="py-2 px-4 border-b">8.0</td>
+      </tr>
+      <tr>
+        <td class="py-2 px-4 border-b">3RD SEM</td>
+        <td class="py-2 px-4 border-b">8.6</td>
+      </tr>
+      <tr class="bg-gray-50">
+        <td class="py-2 px-4 border-b">4TH SEM</td>
+        <td class="py-2 px-4 border-b">8.4</td>
+      </tr> 
+     
+    </tbody>
+  </table>
+
+</table>
+</center>
+
+</section>
+
+<section id="projects" class="container mx-auto p-5">
+  <h2 class="text-3xl font-bold mb-5">Projects</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <!-- Project 1 -->
+    <div class="bg-white p-5 shadow rounded-lg cursor-pointer" onclick="openModal('modal1')">
+      <img src="https://ids.si.edu/ids/deliveryService?id=NMAH-JN2014-3380&max=600" alt="Project 1" class="mb-3 rounded">
+      <h3 class="text-xl font-bold mb-2">DC MOTOR WINDMILL</h3>
+     
+    </div>
+    <!-- Project 2 -->
+    <div class="bg-white p-5 shadow rounded-lg cursor-pointer" onclick="openModal('modal2')">
+      <img src="data:image/jpeg;base64,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" alt="Project 2" class="mb-3 rounded">
+      <h3 class="text-xl font-bold mb-2">TOUCH SENSOR BUZZER.</h3>
+      
+    </div>
+  </div>
+</section>
+
+<!-- Modals -->
+<!-- Modal 1 -->
+<div id="modal1" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden modal">
+  <div class="bg-white p-5 rounded-lg shadow-lg w-1/2">
+    <h2 class="text-2xl font-bold mb-3">DC MOTOR WINDMILL</h2>
+    <p class="mb-4">
+      <P ><B>OVERVIEW</B></P>
+
+      The DC Motor Windmill project involves designing and constructing a small-scale wind turbine that converts wind energy into electrical energy using a DC motor as the generator. This project demonstrates basic principles of renewable energy generation, mechanical-to-electrical energy conversion, and sustainable engineering practices.
+
+      <p><b>OPERATION</b></p>
+
+     When wind blows, it turns the blades of the windmill. The rotation of the blades spins the DC motor, which converts the mechanical energy into electrical energy. The generated electricity is then transmitted through wires to the connected load, demonstrating the windmill's capability to produce power.</p>
+    <button class="bg-blue-500 text-white px-4 py-2 rounded" onclick="closeModal('modal1')">Close</button>
+  </div>
+</div>
+<!-- Modal 2 -->
+<div id="modal2" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden modal">
+  <div class="bg-white p-5 rounded-lg shadow-lg w-1/2">
+    <h2 class="text-2xl font-bold mb-3">TOUCH SENSOR BUZZER.</h2>
+    <p class="mb-4">
+      <P><B>Project Overview</B></P>
+      The Touch Buzzer Sensor project is designed to demonstrate a simple yet effective way to interact with electronic systems through tactile feedback. This project integrates a touch sensor and a buzzer to create a system that responds to physical touch with an audible signal. It can serve as an educational tool for learning basic electronics and programming concepts or as a prototype for more complex applications like touch-activated alarms or interactive exhibits.
+
+      <P><B>OPERATION</B></P>
+      1.Power on the system.
+      2.Touch the sensor.
+      3.When the sensor is touched, the buzzer will emit a sound.
+      4.The system will reset and be ready for the next touch after a short delay.
+    </p>
+    <button class="bg-blue-500 text-white px-4 py-2 rounded" onclick="closeModal('modal2')">Close</button>
+  </div>
+</div>
+</section>
+  <section id="contact" class="container mx-auto p-5 text-center">
+    <h2 class="text-3xl font-bold mb-5">Contact Me</h2>
+    <form id="contact-form" class="max-w-lg mx-auto">
+      <div class="mb-4">
+        <label for="name" class="block text-left">Name</label>
+        <input type="text" id="name" class="w-full p-2 border rounded" required>
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block text-left">Email</label>
+        <input type="email" id="email" class="w-full p-2 border rounded" required>
+      </div>
+      <div class="mb-4">
+        <label for="message" class="block text-left">Message</label>
+        <textarea id="message" class="w-full p-2 border rounded" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Send</button>
+    </form>
+  </section>
+  <footer class="bg-white shadow mt-10">
+    <div class="container mx-auto p-5 text-center">
+      &copy; 
+    </div>
+  </footer>
+
+  <script>
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.remove('hidden');
+      document.body.classList.add('modal-active');
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.add('hidden');
+      document.body.classList.remove('modal-active');
+    }
+  </script>
+
+ 
+
+  <script src="script.js"></script>
+</body>
+</html>
+
